@@ -1,5 +1,4 @@
 use bevy::prelude::*;
-use bevy::audio::PlaybackMode;
 
 fn main() {
     App::new()
@@ -14,9 +13,6 @@ fn setup(
 ) {
     commands.spawn(AudioBundle {
         source: asset_server.load("sounds/bgm.ogg"),
-        settings: PlaybackSettings {
-            mode: PlaybackMode::Loop,
-            ..default()
-        },
+        settings: PlaybackSettings::LOOP,
     });
 }
